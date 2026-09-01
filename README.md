@@ -1,26 +1,21 @@
-# The JMB Resort Website
+# Hotel Marina Meerut — Redesign
 
-A premium, responsive hotel website built with React, TypeScript, Vite, and Tailwind CSS.
+A full visual redesign based on the current Hotel Marina presentation.
 
 ## Run locally
-
 ```bash
 npm install
 npm run dev
 ```
 
 ## Build for deployment
-
 ```bash
 npm run build
-npm run start
 ```
 
-The production files are generated in `dist/`.
+The production output is created in `dist/`.
 
-## Customise the site
-
-- Business details are centralized near the top of `src/App.tsx` for easy updates.
-- Replace the image URLs in `src/App.tsx` with the hotel's own approved photography.
-- Update the SEO title and description in `index.html` if the business positioning changes.
-- The enquiry form is a frontend request flow only; connect it to a booking or email service before treating it as a live reservation system.
+## Notes
+- Hotel details used in the redesign are the details shown in the supplied screenshots.
+- The gallery currently uses presentation/Unsplash images and should be replaced with approved Hotel Marina photography before launch.
+- The enquiry form is a front-end enquiry interaction; it does not create a confirmed reservation or send email by itself.
