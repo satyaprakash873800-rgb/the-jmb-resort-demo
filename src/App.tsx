@@ -26,12 +26,12 @@ import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 const queryClient = new QueryClient();
 
 const hotel = {
-  name: 'The JMB Resort',
-  phone: '+91 8765814455',
-  phoneHref: 'tel:+918765814455',
-  whatsapp: 'https://wa.me/918765814455',
-  address: 'Sahodara, in front of Bharat Petroleum, Sahras Pali',
-  city: 'Ballia, Uttar Pradesh 277001',
+  name: 'Hotel Marina',
+  phone: '+91 84457 66634',
+  phoneHref: 'tel:+918445766634',
+  whatsapp: 'https://wa.me/918445766634',
+  address: 'Do Pahiya Road, Pathanpura, NH58, Khadoli',
+  city: 'Meerut, Uttar Pradesh 250005',
 } as const;
 
 const imageBase = 'https://images.unsplash.com/';
@@ -60,7 +60,7 @@ function Header({ onMenu }: { onMenu: () => void }) {
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-6 text-[#f5f0e4] md:px-10 lg:px-14">
         <a href="#top" className="group flex items-center gap-3" data-testid="link-brand">
           <span className="flex h-9 w-9 items-center justify-center border border-[#f5f0e4]/70 text-[12px] hotel-serif">JMB</span>
-          <span className="text-[11px] font-semibold uppercase tracking-[0.3em]">The JMB Resort</span>
+          <span className="text-[11px] font-semibold uppercase tracking-[0.3em]">Hotel Marina</span>
         </a>
         <nav className="hidden items-center gap-8 text-[11px] font-semibold uppercase tracking-[0.18em] lg:flex" aria-label="Primary navigation">
           <a href="#stay" className="line-link" data-testid="link-stay">Stay</a>
@@ -88,7 +88,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
       <div className="flex items-center justify-between">
         <a href="#top" onClick={onClose} className="group flex items-center gap-3" data-testid="link-mobile-brand">
           <span className="flex h-9 w-9 items-center justify-center border border-[#f5f0e4]/70 text-[12px] hotel-serif">JMB</span>
-          <span className="text-[11px] font-semibold uppercase tracking-[0.3em]">The JMB Resort</span>
+          <span className="text-[11px] font-semibold uppercase tracking-[0.3em]">Hotel Marina</span>
         </a>
         <button type="button" onClick={onClose} className="flex h-11 w-11 items-center justify-center border border-[#f5f0e4]/70" aria-label="Close navigation" data-testid="button-close-menu">
           <X size={20} strokeWidth={1.5} />
@@ -106,7 +106,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
           </a>
         ))}
       </nav>
-      <p className="mt-auto max-w-[260px] text-sm leading-6 text-[#f5f0e4]/65">Hotels · Lawns · Banquet Halls in Ballia.</p>
+      <p className="mt-auto max-w-[260px] text-sm leading-6 text-[#f5f0e4]/65">Comfortable stays · Modern rooms · Meerut</p>
     </div>
   );
 }
@@ -118,12 +118,21 @@ function Hero({ onScroll }: { onScroll: () => void }) {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(25,53,59,0.66)_0%,rgba(25,53,59,0.12)_43%,rgba(25,53,59,0.86)_100%)]" />
       <div className="relative mx-auto grid w-full max-w-[1440px] gap-12 px-6 pb-12 pt-36 md:px-10 md:pb-16 lg:grid-cols-[1fr_340px] lg:items-end lg:px-14">
         <div>
-          <p className="eyebrow mb-7 text-[#c1d2c7]">Ballia · Hotels · Lawns · Banquet Halls</p>
-          <h1 className="hotel-serif max-w-4xl text-[clamp(3.8rem,9vw,9.4rem)] leading-[0.88] tracking-[-0.045em]">Celebrate. Stay.<br />Create memories.</h1>
-          <p className="mt-8 max-w-md text-base leading-7 text-[#f5f0e4]/80 md:text-lg">A premium destination in Ballia for comfortable stays, celebrations and memorable events.</p>
+          <p className="eyebrow mb-7 text-[#c1d2c7]">Meerut · Hotel Marina · Stay · Comfort</p>
+          <h1 className="hotel-serif max-w-4xl text-[clamp(3.8rem,9vw,9.4rem)] leading-[0.88] tracking-[-0.045em]">Stay well.<br />Feel at home.</h1>
+          <p className="mt-8 max-w-md text-base leading-7 text-[#f5f0e4]/80 md:text-lg">A refined stay in Meerut with comfortable rooms, thoughtful service and an easy location on NH58.</p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <div className="flex items-center gap-3 border border-[#f5f0e4]/30 bg-[#19353b]/35 px-4 py-3 backdrop-blur-sm">
+              <span className="text-xl text-[#f2c66d]">★★★★★</span>
+              <div><p className="text-sm font-bold">4.9 / 5</p><p className="text-[9px] uppercase tracking-[0.16em] text-[#f5f0e4]/60">Google · 392 reviews</p></div>
+            </div>
+            <div className="border border-[#f5f0e4]/30 bg-[#19353b]/35 px-4 py-3 backdrop-blur-sm">
+              <p className="text-sm font-bold">20 Rooms</p><p className="text-[9px] uppercase tracking-[0.16em] text-[#f5f0e4]/60">4 room categories</p>
+            </div>
+          </div>
           <div className="mt-10 flex flex-wrap items-center gap-6">
             <a href="#contact" className="group flex items-center gap-3 bg-[#e48a72] px-6 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-[#19353b] transition-transform hover:-translate-y-1" data-testid="link-hero-enquire">
-              Plan your event <ArrowUpRight size={15} />
+              Check availability <ArrowUpRight size={15} />
             </a>
             <button type="button" onClick={onScroll} className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.18em] text-[#f5f0e4]/80 transition-colors hover:text-[#f5f0e4]" data-testid="button-explore-hotel">
               Explore the hotel <ArrowDown size={15} />
@@ -131,8 +140,8 @@ function Hero({ onScroll }: { onScroll: () => void }) {
           </div>
         </div>
         <div className="hidden border-l border-[#f5f0e4]/35 pl-8 lg:block">
-          <p className="eyebrow text-[#c1d2c7]">The JMB Resort</p>
-          <p className="mt-4 hotel-serif text-2xl leading-tight">Hotel stays and event spaces, brought together in Sahodara, Ballia.</p>
+          <p className="eyebrow text-[#c1d2c7]">Hotel Marina</p>
+          <p className="mt-4 hotel-serif text-2xl leading-tight">Comfortable rooms, attentive service and a convenient stay in Khadoli, Meerut.</p>
           <a href={hotel.phoneHref} className="mt-7 flex items-center gap-3 text-[10px] uppercase tracking-[0.14em] text-[#f5f0e4]/65"><span className="h-px w-8 bg-[#e48a72]" /> {hotel.phone}</a>
         </div>
       </div>
@@ -151,8 +160,8 @@ function Intro() {
         <div className="reveal">
           <h2 className="hotel-serif max-w-3xl text-4xl leading-[1.02] tracking-[-0.025em] text-[#19353b] md:text-6xl">Good design gets out of the way. What remains is how a place makes you feel.</h2>
           <div className="mt-10 grid gap-8 text-[15px] leading-7 text-[#19353b]/70 md:grid-cols-2">
-            <p>The JMB Resort brings together hotel accommodation with lawns and banquet halls for guests, families and celebrations.</p>
-            <p>Located in Sahodara, Sahras Pali, the resort welcomes enquiries for stays and memorable events in Ballia.</p>
+            <p>Hotel Marina is designed around comfortable stays, practical amenities and a welcoming experience for business and leisure travellers.</p>
+            <p>Located on Do Pahiya Road near NH58 in Khadoli, Meerut, Hotel Marina is easy to reach and available for direct stay enquiries.</p>
           </div>
         </div>
       </div>
@@ -243,10 +252,10 @@ function DiningSection() {
     <section className="relative overflow-hidden bg-[#19353b] text-[#f5f0e4]">
       <div className="mx-auto grid max-w-[1440px] md:grid-cols-[0.9fr_1.1fr]">
         <div className="reveal flex flex-col justify-center px-6 py-24 md:px-10 md:py-32 lg:px-14">
-          <p className="eyebrow text-[#e48a72]">04 / Banquet & Lawns</p>
-          <h2 className="hotel-serif mt-6 max-w-lg text-5xl leading-[0.96] md:text-7xl">Make room for your moment.</h2>
-          <p className="mt-8 max-w-sm text-[15px] leading-7 text-[#f5f0e4]/65">Explore The JMB Resort as a possible setting for your next gathering. Share your event requirements for verified venue details.</p>
-          <div className="mt-10 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[#c1d2c7]"><Utensils size={16} strokeWidth={1.3} /> Plan your celebration</div>
+          <p className="eyebrow text-[#e48a72]">04 / Stay & Comfort</p>
+          <h2 className="hotel-serif mt-6 max-w-lg text-5xl leading-[0.96] md:text-7xl">Everything you need for a comfortable stay.</h2>
+          <p className="mt-8 max-w-sm text-[15px] leading-7 text-[#f5f0e4]/65">From air-conditioned rooms and Wi-Fi to room service and free parking, Hotel Marina focuses on the essentials that make a stay comfortable.</p>
+          <div className="mt-10 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[#c1d2c7]"><Utensils size={16} strokeWidth={1.3} /> A better way to stay</div>
         </div>
         <div className="relative min-h-[560px] overflow-hidden md:min-h-[680px]">
           <img src={images.dining} alt="Long dining table prepared for guests" className="absolute inset-0 h-full w-full object-cover opacity-75" />
@@ -263,8 +272,8 @@ function GallerySection({ onOpen }: { onOpen: (index: number) => void }) {
     <section id="gallery" className="bg-[#eee9dc] px-6 py-24 md:px-10 md:py-32 lg:px-14">
       <div className="mx-auto max-w-[1440px]">
         <div className="reveal flex items-end justify-between gap-6">
-          <div><p className="eyebrow text-[#e07965]">05 / A little look around</p><h2 className="hotel-serif mt-5 text-5xl leading-none text-[#19353b] md:text-7xl">The feeling of<br />The JMB Resort.</h2></div>
-          <p className="hidden max-w-[210px] text-right text-sm leading-6 text-[#19353b]/60 md:block">A visual library for the things that matter. More images to come.</p>
+          <div><p className="eyebrow text-[#e07965]">05 / A little look around</p><h2 className="hotel-serif mt-5 text-5xl leading-none text-[#19353b] md:text-7xl">The feeling of<br />Hotel Marina.</h2></div>
+          <p className="hidden max-w-[210px] text-right text-sm leading-6 text-[#19353b]/60 md:block">A premium visual presentation for your hotel. Replace demo images with approved Hotel Marina photography before launch.</p>
         </div>
         <div className="mt-16 grid grid-cols-2 gap-3 md:grid-cols-12 md:gap-5">
           {galleryImages.map((image, index) => (
@@ -287,10 +296,10 @@ function NearbySection() {
         <div className="reveal">
           <p className="eyebrow text-[#e07965]">06 / Just beyond the door</p>
           <h2 className="hotel-serif mt-6 text-5xl leading-[0.96] text-[#19353b] md:text-7xl">A good base<br />for going nowhere.</h2>
-          <p className="mt-8 max-w-lg text-[15px] leading-7 text-[#19353b]/70">The JMB Resort is located in Sahodara, Sahras Pali, Ballia, in front of Bharat Petroleum.</p>
+          <p className="mt-8 max-w-lg text-[15px] leading-7 text-[#19353b]/70">Hotel Marina is located on Do Pahiya Road, Pathanpura, NH58, Khadoli, Meerut.</p>
           <div className="mt-10 grid gap-5 border-t border-[#19353b]/20 pt-6 sm:grid-cols-2">
             <div className="flex gap-3"><MapPin size={17} className="mt-0.5 text-[#e07965]" strokeWidth={1.4} /><div><p className="text-xs font-bold uppercase tracking-[0.13em] text-[#19353b]">Find us</p><p className="mt-1 text-sm leading-6 text-[#19353b]/60">{hotel.address}<br />{hotel.city}</p></div></div>
-            <a href="https://www.google.com/maps/search/?api=1&query=The+JMB+Resort+Sahodara+Sahras+Pali+Ballia" target="_blank" rel="noreferrer" className="flex items-start gap-3 text-[#19353b] transition-colors hover:text-[#e07965]" data-testid="link-local-guide"><MoveUpRight size={17} className="mt-0.5" strokeWidth={1.4} /><span className="text-xs font-bold uppercase tracking-[0.13em] line-link">Get directions</span></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Marina+Do+Pahiya+Road+Pathanpura+Khadoli+Meerut" target="_blank" rel="noreferrer" className="flex items-start gap-3 text-[#19353b] transition-colors hover:text-[#e07965]" data-testid="link-local-guide"><MoveUpRight size={17} className="mt-0.5" strokeWidth={1.4} /><span className="text-xs font-bold uppercase tracking-[0.13em] line-link">Get directions</span></a>
           </div>
         </div>
       </div>
@@ -313,8 +322,8 @@ function EnquirySection() {
       <div className="mx-auto grid max-w-[1200px] gap-16 md:grid-cols-[0.82fr_1.18fr]">
         <div className="reveal">
           <p className="eyebrow text-[#e07965]">07 / Start a conversation</p>
-          <h2 className="hotel-serif mt-6 text-5xl leading-[0.96] text-[#19353b] md:text-7xl">Tell us about<br />your celebration.</h2>
-          <p className="mt-8 max-w-sm text-[15px] leading-7 text-[#19353b]/65">Share a few details to start a conversation with The JMB Resort about your stay or event.</p>
+          <h2 className="hotel-serif mt-6 text-5xl leading-[0.96] text-[#19353b] md:text-7xl">Plan your<br />stay.</h2>
+          <p className="mt-8 max-w-sm text-[15px] leading-7 text-[#19353b]/65">Share your stay requirements and the Hotel Marina team can respond directly.</p>
           <div className="mt-12 space-y-5 border-t border-[#19353b]/20 pt-6 text-sm text-[#19353b]/70">
             <a href={hotel.phoneHref} className="flex items-center gap-3"><Phone size={16} className="text-[#e07965]" strokeWidth={1.4} /> {hotel.phone}</a>
             <a href={hotel.whatsapp} target="_blank" rel="noreferrer" className="flex items-center gap-3"><span className="text-[#e07965]">◉</span> WhatsApp</a>
@@ -397,7 +406,7 @@ function Footer() {
     <footer className="bg-[#19353b] px-6 py-14 text-[#f5f0e4] md:px-10 lg:px-14">
       <div className="mx-auto max-w-[1440px]">
         <div className="flex flex-col justify-between gap-12 border-b border-[#f5f0e4]/20 pb-14 md:flex-row md:items-end">
-          <div><p className="eyebrow text-[#c1d2c7]">The JMB Resort</p><p className="hotel-serif mt-5 max-w-xl text-4xl leading-none md:text-6xl">Celebrate. Stay.<br />Create memories.</p></div>
+          <div><p className="eyebrow text-[#c1d2c7]">Hotel Marina</p><p className="hotel-serif mt-5 max-w-xl text-4xl leading-none md:text-6xl">Stay well.<br />Feel at home.</p></div>
           <a href="#top" className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[#f5f0e4]/70 transition-colors hover:text-[#f5f0e4]" data-testid="link-back-to-top">Back to top <ArrowUpRight size={15} /></a>
         </div>
         <div className="grid gap-10 py-10 text-sm text-[#f5f0e4]/65 sm:grid-cols-3">
@@ -405,7 +414,7 @@ function Footer() {
           <div><p className="eyebrow mb-4 text-[#c1d2c7]">Contact</p><a href={hotel.phoneHref}>{hotel.phone}</a><br /><a href={hotel.whatsapp} target="_blank" rel="noreferrer">WhatsApp</a></div>
           <div><p className="eyebrow mb-4 text-[#c1d2c7]">Business</p><p>Hotel · Lawns<br />Banquet Halls · Events</p></div>
         </div>
-        <div className="flex flex-col justify-between gap-3 border-t border-[#f5f0e4]/20 pt-6 text-[10px] uppercase tracking-[0.13em] text-[#f5f0e4]/40 sm:flex-row"><span>© {new Date().getFullYear()} The JMB Resort</span><span>Concept website · Details to be confirmed by the resort</span></div>
+        <div className="flex flex-col justify-between gap-3 border-t border-[#f5f0e4]/20 pt-6 text-[10px] uppercase tracking-[0.13em] text-[#f5f0e4]/40 sm:flex-row"><span>© {new Date().getFullYear()} Hotel Marina</span><span>Concept website · Demo presentation · Details to be confirmed by the hotel</span></div>
       </div>
     </footer>
   );
@@ -416,9 +425,9 @@ function Home() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    const title = 'The JMB Resort | Hotels, Lawns & Banquet Halls in Ballia';
+    const title = 'Hotel Marina Meerut | Stay, Comfort & Hospitality';
     document.title = title;
-    const description = 'Discover The JMB Resort in Ballia for hotel stays, lawns, banquet halls and event enquiries.';
+    const description = 'Discover Hotel Marina in Meerut for comfortable stays, modern rooms and direct enquiries.';
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement('meta');
@@ -478,6 +487,11 @@ function Home() {
         <EnquirySection />
       </main>
       <Footer />
+      <div className="fixed inset-x-0 bottom-0 z-40 flex border-t border-[#19353b]/15 bg-[#f5f0e4]/95 p-2 shadow-2xl backdrop-blur-md lg:hidden">
+        <a href={hotel.phoneHref} className="flex flex-1 items-center justify-center gap-2 py-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#19353b]"><Phone size={15} /> Call</a>
+        <a href={hotel.whatsapp} target="_blank" rel="noreferrer" className="flex flex-1 items-center justify-center gap-2 bg-[#19353b] py-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#f5f0e4]">WhatsApp</a>
+        <a href="#contact" className="flex flex-1 items-center justify-center gap-2 py-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#19353b]">Book Now</a>
+      </div>
       <GalleryLightbox index={lightboxIndex} onClose={() => setLightboxIndex(null)} onPrevious={previousImage} onNext={nextImage} />
     </div>
   );
